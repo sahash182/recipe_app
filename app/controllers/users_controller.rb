@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
-  before_filter :authorize, only[:show]
+  before_filter :authorize, only: [:show]
   
   # form to create new user
   def new
     if current_user
       redirect_to profile_path
     else
-    @user = User.new
-    render :new
+      @user = User.new
+      render :new
     end
   end
 

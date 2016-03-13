@@ -4,9 +4,13 @@
 	<p><%=current_user.last_name %></p>
 	<p><%=current_user.email %></p>
 </div>
-<h3>My Recipe</h3>
-<% current_user.recipes.each do |recipe| %>
-	<p> <%= recipe.name %></p><br>
-	<p> <%= recipe.instructions %></p>
+<% if current_user.recipes.any? %>
+	<h3>My Recipe</h3>
+	<% current_user.recipes.each do |recipe| %>
+		<p> <%= recipe.name %><%= link_to "View Recipe", recipe_path(recipe) %></p>
+	<% end %>
+<% else %>
+	<h4>You dont have any recipes yet!</h4>
+	<%= link_to "Add New Recipe", new_recipe_path %>
 <% end %>
 

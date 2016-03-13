@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  
+  before_filter :authorize, except: [:index, :show]
   # show all recipes in db
   def index
     @recipes = Recipe.all
@@ -28,9 +28,22 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.find(params[:id])
+    if current_user.recipes.include? @recipe
+      render :edit
+    else
+      redirect_to profile_path
+    end
   end
 
   def update
+    recipe = Recipe.find(params[:id])
+    if current_user.recipes.include? recipe
+      recipe.update_attributes(recipe_params)
+      redirect_to recipe_path(recipe)
+    else
+      redirect_to profile_path
+    end
   end
 
   def destroy

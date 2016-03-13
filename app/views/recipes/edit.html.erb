@@ -1,2 +1,10 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+<h1>Edit Recipe</h1>
+<%= form_for @recipe do |f| %>
+	<%=f.text_field :name, placeholder: "Name" %><br>
+	<%=f.text_field :instructions, placeholder: "Instructions" %><br>
+	<hr>
+	<%= f.submit "Save" %>
+
+<% end %>
+
+

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
   	unless current_user
-  		reditect to login_path
+  		redirect_to login_path
   	end
   end
 end
