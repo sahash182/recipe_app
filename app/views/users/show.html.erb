@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Profile Page</h1>
+<div>
+	<p><%=@current_user.first_name %></p>
+	<p><%=@current_user.last_name %></p>
+	<p><%=@current_user.email %></p>
+</div>
+<h3>My Recipe</h3>
+<p><%=@current_user.recipes %></p>
