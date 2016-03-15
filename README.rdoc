@@ -1,28 +1,93 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Recipe_App is made with Ruby on Rails 
 
-Things you may want to cover:
+Rails version - 4.2.3
+Ruby version - Ruby 2.3.0
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Database used is PostgreSQL
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+DIRECTIONS IN ORDER TO CONTRIBUTE TO THIS PROJECT
+
+1) FORKING
+
+    Fork the project through github
+
+2) CLONING 
+
+    Copy the url in your forked project page 
+
+    1) git clone https://whateveryourcloneurlis"
+
+4) ADDING THE UPSTREAM REMOTE
+
+    Change into the cloned direcetory and then at this point, you can upstream remote:
+
+    1) cd recipe_app
+    2) git remote add upstream https://github.com/sahash182/recipe_app
+
+    This will allow you to pull changes from the source locally and merge them like so:
+    
+    ex.
+    
+    1)  git fetch upstream
+    2)  git merge upstream/master
+
+5) CHECKING OUT A TOPIC BRANCH   
+
+    Before making your own changes, checkout a topic branch first
+
+    ex.
+
+    1) git checkout -b edit_read_me
+
+6) COMMITTING
+
+    1) git commit  -am "editing readMe to help others get set up in order to contribute to the project"
+
+7)  PUSHING
+
+    Push the topic branch to your own fork of the project
+
+    1) git push origin edit_read_me
+
+8)  CREATE A PULL REQUEST
+
+    Finally,  you will create a pull request. First, go to your fork of the repo. You might see a "your recently pushed branches", and if so, you can choose "Compare and Pull Request". Otherwise, you can select your branch from the dropdown, and subsequently click "Pull Request" or "Compare" at the top right of the repo section.
+
+----------
+
+Directions in order to set up Database
+
+1) Make sure you have PosgreSQL and have it running.
+
+1) In terminal, cd in to the project folder and run a database migration.
+  
+  1) cd recipe_app
+  2) rake db:migrate
+
+2) A common error of database duplication might show up which will prevent the migration to continue.
+
+  
+  WArning - You could reset your database but it will reset the same table from another rails app if it's the same table name.
+
+  1) rake db:reset db:migrate
+
+----------
+
+Directions to fire up the App
+
+1) Make sure you run bundle install in terminal if you haven't done so yet
+
+  1) cd recipe_app
+  2) bundle install
+
+2)  Turn on postgreSQL 
+
+3)  CD into app app and start rails server
+
+  1) cd recipe_app
+  2) rails s
+
+
