@@ -78,9 +78,16 @@ Directions in order to set up Database
 
 Directions to fire up the App
 
-1)  Make sure PosgreSQL server is running
+1) Make sure you run bundle install in terminal if you haven't done so yet
 
-2)  CD into app app and start rails server
+  1) cd recipe_app
+  2) bundle install
+
+2)  Turn on postgreSQL 
+
+3)  CD into app app and start rails server
 
   1) cd recipe_app
   2) rails s
+
+
